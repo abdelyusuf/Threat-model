@@ -38,6 +38,8 @@ jspm_packages/
 !/project.json
 .terragrunt*
 /test-reports
+ *.json
+ *.lock
 
 # Local .terraform directories
 **/.terraform/*
