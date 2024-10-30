@@ -59,11 +59,11 @@ jobs:
 
       - name: Terraform Format
         working-directory: Terraform  
-        run: Terraform Fmt --recursive
+        run: terraform fmt --recursive
 
       - name: Terraform Format Check
         working-directory: Terraform 
-        run: Terraform Fmt -check
+        run: terraform fmt -check
 
       - name: Terraform Init (Backend S3)
         working-directory: Terraform  
