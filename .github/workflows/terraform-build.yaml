@@ -62,9 +62,9 @@ jobs:
       - name: Terraform Init (Backend S3)
         working-directory: terraform
         run: |
-          terraform init -backend-config="bucket=threat-modeling-tool--tf" \
+          terraform init -backend-config="bucket=threat-model-bucket" \  
                          -backend-config="key=state" \
-                         -backend-config="region=us-east-1" \
+                         -backend-config="region=eu-west-2" \  
                          -backend-config="encrypt=true"
 
       - name: Terraform Validate
@@ -92,9 +92,9 @@ jobs:
         working-directory: terraform
         id: tf-plan
         run: |
-          terraform init -backend-config="bucket=threat-modeling-tool--tf" \
+          terraform init -backend-config="bucket=threat-model-bucket" \  # Updated to match your S3 bucket
                          -backend-config="key=state" \
-                         -backend-config="region=us-east-1" \
+                         -backend-config="region=eu-west-2" \  # Updated to match your specified region
                          -backend-config="encrypt=true"
           terraform plan
 
@@ -110,8 +110,8 @@ jobs:
       - name: Terraform Apply
         working-directory: terraform
         run: |
-          terraform init -backend-config="bucket=threat-modeling-tool--tf" \
+          terraform init -backend-config="bucket=threat-model-bucket" \  # Updated to match your S3 bucket
                          -backend-config="key=state" \
-                         -backend-config="region=us-east-1" \
+                         -backend-config="region=eu-west-2" \  # Updated to match your specified region
                          -backend-config="encrypt=true"
           terraform apply -auto-approve
