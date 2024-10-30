@@ -53,16 +53,16 @@ jobs:
 
       - name: Terraform Format
         working-directory: Terraform  
-        run: terraform fmt --recursive
+        run: Terraform Fmt --recursive
 
       - name: Terraform Format Check
         working-directory: Terraform 
-        run: terraform fmt -check
+        run: Terraform Fmt -check
 
       - name: Terraform Init (Backend S3)
         working-directory: Terraform  
         run: |
-          terraform init -backend-config="bucket=threat-model-bucket" \  
+          Terraform Init -backend-config="bucket=threat-model-bucket" \  
                          -backend-config="key=state" \
                          -backend-config="region=eu-west-2" \  
                          -backend-config="encrypt=true"
