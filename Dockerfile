@@ -1,26 +1,17 @@
-FROM node:18-alpine AS builder
+FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /app 
 
 COPY package*.json ./
+
 COPY yarn.lock ./
+
 RUN yarn install
 
+RUN yarn global add serve
+
 COPY . .
-RUN yarn build
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-RUN chown -R appuser:appgroup /app
+EXPOSE 3000
 
-FROM scratch
-
-COPY --from=builder /bin/busybox /bin/busybox
-
-COPY --from=builder --chown=appuser:appgroup /app/build /app
-
-USER appuser
-
-EXPOSE 8080
-
-ENTRYPOINT ["/bin/busybox", "httpd", "-f", "-p", "8080", "-h", "/app"]
-
+CMD ["serve", "-s", "build", "-l", "3000"]
