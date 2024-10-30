@@ -51,6 +51,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+            terraform_version: 1.5.2  
+
+
       - name: Terraform Format
         working-directory: Terraform  
         run: Terraform Fmt --recursive
