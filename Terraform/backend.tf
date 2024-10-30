@@ -1,8 +1,10 @@
+# backend 
 terraform {
+  required_version = ">= 1.0.0"  
   backend "s3" {
-    bucket  = "threat-modeling-tool--tf"
+    bucket  = "threat-model-bucket"
     key     = "state"
-    region  = "us-east-1"
+    region  = "eu-west-2"
     encrypt = true
   }
 }

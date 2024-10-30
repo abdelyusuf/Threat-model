@@ -1,19 +1,26 @@
+# route53 variables.tf
+
 variable "zone_name" {
-  type        = string
   description = "Route53 zone name"
+  type        = string
 }
 
 variable "record_name" {
+  description = "Route53 record name"
   type        = string
-  description = "CNAME record name"
-}
-
-variable "ttl" {
-  type        = number
-  description = "Time to live for the DNS record"
 }
 
 variable "alb_dns_name" {
+  description = "The DNS name of the ALB to point the Route53 record to"
   type        = string
-  description = "DNS name of the ALB"
+}
+
+variable "lb_dns_name" {
+  description = "The DNS name of the load balancer"
+  type        = string
+}
+
+variable "lb_zone_id" {
+  description = "The zone ID of the load balancer"
+  type        = string
 }

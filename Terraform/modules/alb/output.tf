@@ -1,29 +1,32 @@
-output "alb_arn" {
-  description = "The ARN of the Application Load Balancer"
-  value       = aws_lb.tm_alb.arn
-}
-
-output "alb_url" {
-  description = "The URL of the Application Load Balancer"
-  value       = aws_lb.tm_alb.dns_name
-}
+# alb outputs.tf
 
 output "target_group_arn" {
   description = "The ARN of the target group"
-  value       = aws_lb_target_group.tm_target_group.arn
-}
-
-output "http_listener" {
-  description = "The ID of the HTTP Listener"
-  value       = aws_lb_listener.tm_http.id
-}
-
-output "https_listener" {
-  description = "The ID of the HTTPS Listener"
-  value       = aws_lb_listener.tm_https.id
+  value       = aws_lb_target_group.tm-tg.arn
 }
 
 output "alb_dns_name" {
-  description = "The DNS name of the Application Load Balancer"
-  value       = aws_lb.tm_alb.dns_name
+  description = "The DNS name of the ALB"
+  value       = aws_lb.tm-lb.dns_name
+}
+
+output "listener_http_arn" {
+  description = "The ARN of the HTTP listener"
+  value       = aws_lb_listener.listener_http.id
+}
+
+output "listener_https_arn" {
+  description = "The ARN of the HTTPS listener"
+  value       = aws_lb_listener.listener_https.id
+}
+
+output "dns_name" {
+  description = "The DNS name of the load balancer"
+  value       = aws_lb.tm-lb.dns_name # Adjust based on your actual resource name
+}
+
+
+output "zone_id" {
+  description = "The zone ID of the load balancer"
+  value       = aws_lb.tm-lb.zone_id # Ensure this is the correct reference
 }

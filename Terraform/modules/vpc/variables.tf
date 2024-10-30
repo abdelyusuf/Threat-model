@@ -1,19 +1,31 @@
+# vpc variables.tf
+
 variable "vpc_cidr" {
-  type        = string
   description = "CIDR block for the VPC"
+  type        = string
 }
 
 variable "vpc_name" {
-  type        = string
   description = "Name of the VPC"
+  type        = string
 }
 
 variable "public_subnet_cidrs" {
+  description = "List of CIDR blocks for public subnets"
   type        = list(string)
-  description = "CIDR blocks for public subnets"
+}
+
+variable "private_subnet_cidrs" {
+  description = "List of CIDR blocks for private subnets"
+  type        = list(string)
 }
 
 variable "availability_zones" {
+  description = "List of availability zones for the VPC"
   type        = list(string)
-  description = "Availability zones for subnets"
+}
+
+variable "sg_name" {
+  description = "security group name"
+  type        = string
 }
