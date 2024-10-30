@@ -142,5 +142,4 @@ vendor/pkg/
 pyenv
 Vagrantfile
 .idea
-package.json
-yarn.lock
+
