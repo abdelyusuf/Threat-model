@@ -76,11 +76,6 @@ variable "record_name" {
   default     = "tm.teamalpha.abdelhakimyusuf.net"
 }
 
-variable "task_role_arn" {
-  description = "The IAM role ARN to use for the ECS Task"
-  type        = string
-  default     = "arn:aws:iam::992382674979:role/ecsTaskExecutionRole"
-}
 
 variable "create_iam_role" {
   description = "Whether to create an IAM role"
@@ -88,8 +83,3 @@ variable "create_iam_role" {
   default     = false
 }
 
-variable "iam_role_name" {
-  description = "Name of the IAM role for the ECS task"
-  type        = string
-  default     = "ecs_task_execution_role"
-}
