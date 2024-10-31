@@ -43,6 +43,8 @@ jobs:
           image-ref: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/threatmodelapp:latest
           severity: CRITICAL
           cache-dir: .trivycache
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   terraform_static_analysis:
     name: 'Terraform Static Analysis'
