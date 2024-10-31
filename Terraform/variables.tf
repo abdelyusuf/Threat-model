@@ -43,7 +43,8 @@ variable "target-group-name" {
 variable "container_image" {
   description = "Container image for ECS task"
   type        = string
-  default     = "992382674979.dkr.ecr.eu-west-2.amazonaws.com/threatmodelapp2:latest"
+  default     = "992382674979.dkr.ecr.eu-west-2.amazonaws.com/threatmodelapp:latest"
+  
 }
 
 variable "container_port" {
