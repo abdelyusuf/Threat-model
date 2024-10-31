@@ -40,7 +40,7 @@ jobs:
       - name: Scan Docker image for vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/threatmodelapp
+          image-ref: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/threatmodelapp:latest
           severity: CRITICAL
 
   terraform_static_analysis:
