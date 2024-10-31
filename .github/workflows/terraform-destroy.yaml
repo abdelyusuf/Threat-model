@@ -35,7 +35,7 @@ jobs:
         run: |
           terraform init -backend-config="bucket=threat-modeling-tool--tf" \
                          -backend-config="key=state" \
-                         -backend-config="region=us-east-1" \
+                         -backend-config="region=eu-west-2" \
                          -backend-config="encrypt=true"
 
       - name: Terraform Destroy
