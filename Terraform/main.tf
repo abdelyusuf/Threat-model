@@ -25,7 +25,7 @@ module "ecs" {
   source             = "./modules/ecs"
   cluster_name       = "tm-cluster"
   task_family        = "tm-task"
-  task_cpu           = "2024"
+  task_cpu           = "1024"
   task_memory        = "4048"
   container_name     = "threatmodel"
   container_image    = var.container_image
