@@ -23,10 +23,10 @@ resource "aws_lb_target_group" "tm-tg" {
 
   health_check {
     path                = "/health"
-    interval            = 30
-    timeout             = 5
-    healthy_threshold   = 2
-    unhealthy_threshold = 2
+    interval            = 60
+    timeout             = 30
+    healthy_threshold   = 1
+    unhealthy_threshold = 1
   }
 }
 
