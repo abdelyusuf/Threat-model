@@ -33,7 +33,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          terraform init -backend-config="bucket=threat-modeling-tool--tf" \
+          Terraform Init -backend-config="bucket=threat-modeling-tool--tf" \
                          -backend-config="key=state" \
                          -backend-config="region=eu-west-2" \
                          -backend-config="encrypt=true"
@@ -43,4 +43,4 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: terraform destroy -auto-approve
+        run: Terraform Destroy -auto-approve
