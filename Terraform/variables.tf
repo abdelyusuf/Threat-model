@@ -61,7 +61,7 @@ variable "desired_count" {
 variable "certificate_arn" {
   description = "The ARN of the SSL certificate for the ALB"
   type        = string
-  default     = "arn:aws:acm:eu-west-2:992382674979:certificate/b40264cc-cf86-4cab-892d-6c41219358c0"
+  default     = "arn:aws:acm:eu-west-2:992382674979:certificate/b2b3f56a-6a81-477f-9726-f381f3adc632"
 }
 
 variable "zone_name" {
