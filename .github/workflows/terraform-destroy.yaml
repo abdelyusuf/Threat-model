@@ -28,12 +28,12 @@ jobs:
           terraform_version: 1.9.7 
 
       - name: Terraform Init with S3 Backend
-        working-directory: terraform
+        working-directory: Terraform
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          Terraform Init -backend-config="bucket=threat-model-bucket" \
+          terraform init -backend-config="bucket=threat-model-bucket" \
                          -backend-config="key=state" \
                          -backend-config="region=eu-west-2" \
                          -backend-config="encrypt=true"
@@ -43,4 +43,4 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: Terraform Destroy -auto-approve
+        run: terraform destroy -auto-approve
