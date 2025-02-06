@@ -57,7 +57,7 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.9.7  
+          terraform_version: latest  
 
       - name: Terraform Format
         working-directory: Terraform
